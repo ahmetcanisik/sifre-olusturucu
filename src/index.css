@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.dbtn {
+  @apply bg-blue-500 text-white p-2 rounded border border-solid border-black dark:border-slate-400;
+}
+
+.dbtn:hover {
+  @apply transition-all outline outline-black;
+  border-radius: 16px 0 16px 0;
+}
+
+.delbtn {
+  @apply bg-red-500;
+}
+
+.editbtn {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+}
+
+.App {
+  @apply w-full m-auto flex justify-center flex-col items-center bg-slate-50 text-black dark:text-white dark:bg-black;
+}
+
+.choice-character-area {
+  @apply w-full;
+
+  label {
+    @apply flex gap-2 items-center select-none text-xl bg-slate-100 dark:bg-slate-700 cursor-pointer flex w-full my-1 rounded font-bold p-2 hover:text-white hover:bg-blue-600 active:outline active:outline-black active:animate-bounce;
+  }
+}
+
+.output {
+  @apply w-full flex justify-center items-center font-bold my-4;
+  input {
+    @apply w-full;
+  }
+}
+
+.disabled {
+  @apply opacity-50 bg-slate-500 text-white cursor-not-allowed;
 }
